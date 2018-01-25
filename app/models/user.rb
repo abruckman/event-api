@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :users, -> { distinct }, through: :events
   has_and_belongs_to_many :pairings
   has_many :pairs, ->{distinct}, through: :pairings, source: :users, class_name: "User"
+  has_many :likes
     #code
   # @possibles = self.users
 
