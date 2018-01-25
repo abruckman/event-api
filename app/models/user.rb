@@ -1,9 +1,6 @@
 class User < ApplicationRecord
   has_many :interests
   has_many :events, through: :interests
-  # has_many :candidacies
-  # has_many :pairings, through: :candidacies
-  # has_many :candidates, through: :candidacies, class_name: "User"
   has_many :users, -> { distinct }, through: :events
   has_and_belongs_to_many :pairings
   has_many :pairs, ->{distinct}, through: :pairings, source: :users, class_name: "User"
