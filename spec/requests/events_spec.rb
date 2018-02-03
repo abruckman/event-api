@@ -28,7 +28,7 @@ RSpec.describe 'Events API', type: :request do
       end
 
       it 'returns status code 200' do
-        expect(resonse).to have_http_status(200)
+        expect(response).to have_http_status(200)
       end
     end
 
